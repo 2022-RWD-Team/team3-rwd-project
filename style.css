@@ -63,7 +63,7 @@
 }
 
 /* clients */
-.client{
+.client-img{
   width: 80%; /* moze byc tez 100% */
   border-radius: 50%;
   min-width: 15vw; /* vw i vh - doczytać co to za jednostki */
@@ -87,7 +87,7 @@ footer img{
 
 /* Own @media rule */
 @media screen and (max-width: 767px){
-  .client{
+  .client-img{
     width: 40%;
   }
 }
