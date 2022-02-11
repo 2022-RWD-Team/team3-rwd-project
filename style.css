@@ -1,5 +1,5 @@
 /* navigation */
-.navbar{
+.navbar {
   background-color: black;
   font-size: 0.9rem;
   letter-spacing: 0.1rem;
@@ -10,89 +10,111 @@
   height: 1.8rem;
 }
 
-.navbar .navbar-nav li{
+.navbar .navbar-nav li {
   padding-right: 0.6rem;
 }
 
-.navbar .navbar-nav .nav-link{
+.navbar .navbar-nav .nav-link {
   color: white;
   padding-top: 0.6rem;
 }
 
-.navbar .navbar-nav .nav-link:hover{
+.navbar .navbar-nav .nav-link:hover {
   color: greenyellow;
 }
 
 /* landing */
-.home-inner{
+.home-inner {
   background-image: url(img/computers.png);
-  background-size: contain; 
+  background-size: contain;
 }
 
-.caption h1{
+.caption h1 {
   font-size: 2rem;
   font-weight: bold;
 }
 
-.caption{
+.caption {
   width: 100%;
   position: absolute;
-  top:40%;
+  top: 40%;
   color: white;
   z-index: 1;
 }
 
 /* course */
-#course{
+#course {
   background-color: lightgrey;
 }
 
 /* features, resources */
-.jumbotron{
+.jumbotron {
   color: black;
   padding-bottom: 0;
   margin-bottom: 0;
 }
 
-.features-list{
+.features-list {
   list-style: none;
 }
 
-.line{
+.line {
   margin-bottom: 0;
 }
 
 /* clients */
-.client{
+.client {
   width: 80%; /* moze byc tez 100% */
   border-radius: 50%;
   min-width: 15vw; /* vw i vh - doczytać co to za jednostki */
 }
 
+
+.attractions h3{
+  color: grey;
+  font-size: 1rem;
+  
+}
+
+.attractions h4{
+  font-size: 2rem;
+  margin-bottom: 50px;
+}
+
+.poi h2{
+  font-size: 1.5rem;
+}
+
+.poi-page {
+  text-decoration: none;
+  color: rgb(33, 37, 41);
+}
+
+
 /* contact / footer */
 
-footer, footer a{
+footer,
+footer a {
   color: darkgrey;
 }
 
-footer a:hover, footer p, footer h3{
+footer a:hover,
+footer p,
+footer h3 {
   color: black;
 }
 
-footer img{
+footer img {
   height: 3rem;
   margin: 1rem 0;
 }
 
-
 /* Own @media rule */
-@media screen and (max-width: 767px){
-  .client{
+@media screen and (max-width: 767px) {
+  .client {
     width: 40%;
   }
 }
-
-
 
 /*============= SECTION =============*/
 /* 
@@ -121,7 +143,6 @@ footer img{
   background-color: #189582;
   color: white;
 } */
-
 
 /*============ BOOTSTRAP BREAK POINTS:
 
