@@ -67,6 +67,8 @@
   width: 80%; /* moze byc tez 100% */
   border-radius: 50%;
   min-width: 15vw; /* vw i vh - doczytać co to za jednostki */
+  border: solid 5px lightgrey;
+  box-sizing: border-box;
 }
 
 /* contact / footer */
