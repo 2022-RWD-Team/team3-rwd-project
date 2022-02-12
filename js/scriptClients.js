@@ -9,8 +9,6 @@ const createHighRatings = index =>{
     return ratings[index];
 }
 
-// let width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-
 const opinionTitles =['Świetna lokalizacja', 'Eleganckie wnętrza', 'Profesjonalna obsługa', 'Doskonała restauracja', 'Przestronny basen', 'Masa udogodnień', 'Wyciszone pomieszczenia', 'Godny polecenia', 'Dobry wybór', 'Na pewno jeszcze tu wrócę', 'Pomocny personel', 'Udany urlop'];
 
 
@@ -66,7 +64,6 @@ async function getClient(source){
     return data;
 }
 
-
 function createClientHTML(data){
     data.results.forEach((result, index) => {
         clientsContainer.innerHTML +=`
@@ -106,38 +103,6 @@ function hideExtraClients(){
     allClients.slice(4).forEach(client => client.style.display = "none");
     }
 
-
- /*    function hideExtraClients(){
-        const clients = document.querySelectorAll('.client');
-        const allClients = Array.from(clients);
-    
-            if(width < 768){allClients.slice(3).forEach(client => client.style.display = "none")};
-            if(width > 768 && width < 992){
-                allClients.slice(4).forEach(client => client.style.display = "none")}
-            if(width > 992 && width < 1200){
-                allClients.slice(3).forEach(client => client.style.display = "none")
-            }else{
-                allClients.slice(4).forEach(client => client.style.display = "none");
-        } 
-        } */
-
-
-/* const clients = document.querySelectorAll('.client');
-clients.forEach(client => {
-    const regex = /\d+/;
-    const clientNumber = Number(client.id.match(regex));
-    if(width > 1200 && clientNumber > 4){
-        client.style.display = "none";
-    }else if(width > 992 && clientNumber > 3){
-        client.style.display = "none";
-    }else{
-        client.style.display = "initial";
-    }
-
-
-}) */
-
-
 function addClientRating(){
     const clientRating = document.querySelectorAll('.client-rating');
     clientRating.forEach(rating => {
@@ -156,40 +121,3 @@ function addClientOpinionTitle(){
     const clientOpinion = document.querySelectorAll('.opinion');
     clientOpinion.forEach(opinion => opinion.innerHTML=`"${opinionTitles.pop()}"`);
 }
-
-
-/* window.addEventListener('resize', ()=>{
-
-    const clients = document.querySelectorAll('.client');
-    
-    if(width > 992 && width < 1200 || width < 768){
-        clients.forEach(client => {
-
-            const clientNumber = Number(client.id.charAt(7));
-            if(clientNumber % 4 === 0 || clientNumber > 3){
-                client.style.display= "none";}})
-    }else{ clients.forEach(client => client.style.display= "initial");
-}
-}); */
-
-
-/* showOpinionsBtn.addEventListener('click', e => {
-    e.stopPropagation();
-    e.target.classList.toggle('visible');
-
-    const clients = document.querySelectorAll('.client');
-    clients.forEach(client => {
-        if(client.style.display = "none"){
-            client.style.display = "initial";
-        }
-    })
-    
-
-    if(e.target.classList.contains('visible')){
-        e.target.textContent = "Zwiń";
-    } else{
-        e.target.textContent = "Zobacz więcej opinii";
-        const clientsToBeHidden = Array.from(clients).filter((client, index) => index > 3);
-        clientsToBeHidden.forEach(client => client.style.display ="none");
-    }
-}) */
