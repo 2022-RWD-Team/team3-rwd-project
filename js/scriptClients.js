@@ -9,13 +9,13 @@ const createHighRatings = index =>{
     return ratings[index];
 }
 
-let width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+// let width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 
 const opinionTitles =['Świetna lokalizacja', 'Eleganckie wnętrza', 'Profesjonalna obsługa', 'Doskonała restauracja', 'Przestronny basen', 'Masa udogodnień', 'Wyciszone pomieszczenia', 'Godny polecenia', 'Dobry wybór', 'Na pewno jeszcze tu wrócę', 'Pomocny personel', 'Udany urlop'];
 
 
-window.addEventListener('DOMContentLoaded', () =>{
- 
+window.addEventListener('DOMContentLoaded', e =>{
+    e.stopPropagation();
     getClient(`https://randomuser.me/api/?results=12`).then(data => {
         createClientHTML(data);
         console.log('resolved', data.results); 
@@ -26,21 +26,34 @@ window.addEventListener('DOMContentLoaded', () =>{
 
 showOpinionsBtn.addEventListener('click', e => {
     e.stopPropagation();
-    e.target.classList.toggle('visible');
 
     const clients = document.querySelectorAll('.client');
+    const allClients = Array.from(clients);
+
     clients.forEach(client => {
         if(client.style.display = "none"){
             client.style.display = "initial";
         }
     })
 
-    if(e.target.classList.contains('visible')){
+    if(!e.target.classList.contains('visible-row2') && !e.target.classList.contains('visible-row3')){
+        e.target.classList.add('visible-row2');
+        allClients.slice(4,8).forEach(client => client.style.display ="initial");
+        allClients.slice(8).forEach(client => client.style.display ="none");    
+    } else if(e.target.classList.contains('visible-row2')){
+        e.target.classList.remove('visible-row2');
+        e.target.classList.add('visible-row3');
+        allClients.slice(7).forEach(client => client.style.display ="initial");  
+    } else {
+        e.target.classList.remove('visible-row3');
+        allClients.slice(4).forEach(client => client.style.display ="none"); 
+    }
+
+
+    if(e.target.classList.contains('visible-row3')){
         e.target.textContent = "Zwiń";
     } else{
         e.target.textContent = "Zobacz więcej opinii";
-        const clientsToBeHidden = Array.from(clients).filter((client, index) => index > 3);
-        clientsToBeHidden.forEach(client => client.style.display ="none");
     }
 })
 
@@ -125,7 +138,6 @@ clients.forEach(client => {
 }) */
 
 
-
 function addClientRating(){
     const clientRating = document.querySelectorAll('.client-rating');
     clientRating.forEach(rating => {
@@ -161,3 +173,23 @@ function addClientOpinionTitle(){
 }); */
 
 
+/* showOpinionsBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    e.target.classList.toggle('visible');
+
+    const clients = document.querySelectorAll('.client');
+    clients.forEach(client => {
+        if(client.style.display = "none"){
+            client.style.display = "initial";
+        }
+    })
+    
+
+    if(e.target.classList.contains('visible')){
+        e.target.textContent = "Zwiń";
+    } else{
+        e.target.textContent = "Zobacz więcej opinii";
+        const clientsToBeHidden = Array.from(clients).filter((client, index) => index > 3);
+        clientsToBeHidden.forEach(client => client.style.display ="none");
+    }
+}) */
