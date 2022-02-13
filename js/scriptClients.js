@@ -2,13 +2,11 @@
 const clientsContainer = document.querySelector('.clients-container');
 const showOpinionsBtn = document.querySelector('.show-opinions-btn');
 const ratings =[];
-const createHighRatings = index =>{
-    for(let i =80; i<=100; i++ ){
-        ratings.push(i);
-    }
-    return ratings[index];
-}
 
+function createHighRatings(min,max){
+    return Math.floor(Math.random() * (max - min + 1) + min);
+} 
+  
 const opinionTitles =['Świetna lokalizacja', 'Eleganckie wnętrza', 'Profesjonalna obsługa', 'Doskonała restauracja', 'Przestronny basen', 'Masa udogodnień', 'Wyciszone pomieszczenia', 'Godny polecenia', 'Dobry wybór', 'Na pewno jeszcze tu wrócę', 'Pomocny personel', 'Udany urlop'];
 
 
@@ -27,12 +25,6 @@ showOpinionsBtn.addEventListener('click', e => {
 
     const clients = document.querySelectorAll('.client');
     const allClients = Array.from(clients);
-
-    clients.forEach(client => {
-        if(client.style.display = "none"){
-            client.style.display = "initial";
-        }
-    })
 
     if(!e.target.classList.contains('visible-row2') && !e.target.classList.contains('visible-row3')){
         e.target.classList.add('visible-row2');
@@ -106,9 +98,9 @@ function hideExtraClients(){
 function addClientRating(){
     const clientRating = document.querySelectorAll('.client-rating');
     clientRating.forEach(rating => {
-        let randomNumber = Math.floor(Math.random() * ratings.length);
-        rating.innerText=`Ocena: ${createHighRatings(randomNumber)}/100`;
-        if(createHighRatings(randomNumber) >= 95){
+        const randomRating = createHighRatings(80,100);
+        rating.innerText=`Ocena: ${randomRating}/100`;
+        if(randomRating >= 95){
             rating.style.color = "green";
             rating.style.fontWeight = "700";
         }else{
