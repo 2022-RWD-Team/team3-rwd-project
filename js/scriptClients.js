@@ -111,5 +111,12 @@ function addClientRating(){
 
 function addClientOpinionTitle(){
     const clientOpinion = document.querySelectorAll('.opinion');
-    clientOpinion.forEach(opinion => opinion.innerHTML=`"${opinionTitles.pop()}"`);
+    clientOpinion.forEach(opinion => opinion.innerHTML=`"${outputRandomClientOpinionTitle(opinionTitles)}"`);
+}
+
+function outputRandomClientOpinionTitle(array){
+    for(let i in array){
+        const random = Math.floor(Math.random()*array.length);
+        return array.splice(random, 1);
+    }
 }
