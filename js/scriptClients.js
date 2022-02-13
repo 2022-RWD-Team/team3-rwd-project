@@ -115,8 +115,6 @@ function addClientOpinionTitle(){
 }
 
 function outputRandomClientOpinionTitle(array){
-    for(let i in array){
         const random = Math.floor(Math.random()*array.length);
         return array.splice(random, 1);
-    }
 }
