@@ -47,20 +47,89 @@
   background-color: lightgrey;
 }
 
-/* features, resources */
+/* start SPECIAL PACKAGES */
+
 .jumbotron {
   color: black;
-  padding-bottom: 0;
-  margin-bottom: 0;
+  padding: 4rem;
 }
 
-.features-list {
-  list-style: none;
+/* divider */
+#packages .divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 0.8rem;
+  color: gray;
+  font-variant: small-caps;
+  padding-bottom: 1em;
+}
+#packages .divider::after,
+#packages .divider::before {
+  content: "";
+  border: 0.1px solid lightgray;
+  flex: 1;
+}
+#packages .divider:not(:empty)::before {
+  margin-right: 0.5em;
+}
+#packages .divider:not(:empty)::after {
+  margin-left: 0.6em;
 }
 
-.line {
-  margin-bottom: 0;
+/* description */
+#packages h1 {
+  font-variant: small-caps;
 }
+#packages p {
+  font-size: 1em;
+}
+
+/* dropdowns & images */
+
+#packages button {
+  font-weight: bold;
+  font-variant: small-caps;
+}
+#packages .bottom-rounded {
+  border-radius: 0 0 1em 1em;
+}
+#packages .top-rounded {
+  border-radius: 1em 1em 0 0;
+}
+#packages .top-right-rounded {
+  border-radius: 0 1em 0 0 ;
+}
+#packages .top-left-rounded {
+  border-radius: 1em 0 0 0 ;
+}
+#packages .bottom-right-rounded {
+  border-radius: 0 0 1em 0;
+}
+#packages .bottom-left-rounded {
+  border-radius: 0 0 0 1em;
+}
+#packages .btn-outline-success {
+  width: 8em;
+}
+
+#packages .btn-group {
+  width: 85%;
+}
+#packages img {
+  width: 85%;
+}
+
+/* ending & button */
+#packages hr {
+  border: 0.1px solid lightgray;
+}
+#packages a {
+  font-variant: small-caps;
+  border-radius: 1em;
+}
+
+/* end SPECIAL PACKAGES */
 
 /* clients */
 
