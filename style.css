@@ -7,7 +7,7 @@
 }
 
 .navbar-brand img {
-  height: 1.8rem;
+  height: 5rem;
 }
 
 .navbar .navbar-nav li {
@@ -25,7 +25,7 @@
 
 /* landing */
 .home-inner {
-  background-image: url(img/computers.png);
+  background-image: url(img/hotel-background.jpg);
   background-size: contain;
 }
 
@@ -45,6 +45,15 @@
 /* course */
 #course {
   background-color: lightgrey;
+}
+
+/* gallery */
+.gallery-image {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.gallery-image img:hover {
+  opacity: 0.8;
 }
 
 /* start SPECIAL PACKAGES */
@@ -98,10 +107,10 @@
   border-radius: 1em 1em 0 0;
 }
 #packages .top-right-rounded {
-  border-radius: 0 1em 0 0 ;
+  border-radius: 0 1em 0 0;
 }
 #packages .top-left-rounded {
-  border-radius: 1em 0 0 0 ;
+  border-radius: 1em 0 0 0;
 }
 #packages .bottom-right-rounded {
   border-radius: 0 0 1em 0;
@@ -133,7 +142,7 @@
 
 /* clients */
 
-.client-img{
+.client-img {
   width: 60%; /* moze byc tez 100% */
   border-radius: 50%;
   min-width: 12vw; /* vw i vh - doczytać co to za jednostki */
@@ -141,19 +150,17 @@
   box-sizing: border-box;
 }
 
-
-.attractions h3{
+.attractions h3 {
   color: grey;
   font-size: 1rem;
-  
 }
 
-.attractions h4{
+.attractions h4 {
   font-size: 2rem;
   margin-bottom: 50px;
 }
 
-.poi h2{
+.poi h2 {
   font-size: 1.5rem;
 }
 
@@ -162,18 +169,25 @@
   color: rgb(33, 37, 41);
 }
 
-
 /* contact / footer */
+#contact {
+  background-color: black;
+  color: white;
+}
+.blockquote-footer {
+  background-color: white;
+}
 
 footer,
 footer a {
+  background-color: black;
   color: darkgrey;
 }
 
 footer a:hover,
 footer p,
 footer h3 {
-  color: black;
+  color: white;
 }
 
 footer img {
@@ -182,8 +196,8 @@ footer img {
 }
 
 /* Own @media rule */
-@media screen and (max-width: 767px){
-  .client-img{
+@media screen and (max-width: 767px) {
+  .client-img {
     width: 40%;
   }
 }
